@@ -11,6 +11,7 @@ dependencies:
   react-scripts: 3.3.0_node-sass@4.13.1
   redux: 4.0.5
   redux-logger: 3.0.6
+  redux-persist: 6.0.0_redux@4.0.5
   reselect: 4.0.0
 lockfileVersion: 5.1
 packages:
@@ -10035,6 +10036,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
+  /redux-persist/6.0.0_redux@4.0.5:
+    dependencies:
+      redux: 4.0.5
+    dev: false
+    peerDependencies:
+      redux: '>4.0.0'
+    resolution:
+      integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==
   /redux/4.0.5:
     dependencies:
       loose-envify: 1.4.0
@@ -12357,4 +12366,5 @@ specifiers:
   react-scripts: 3.3.0
   redux: ^4.0.5
   redux-logger: ^3.0.6
+  redux-persist: ^6.0.0
   reselect: ^4.0.0
