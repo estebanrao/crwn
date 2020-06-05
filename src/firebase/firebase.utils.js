@@ -9,7 +9,7 @@ const config = {
   projectId: 'crwn-db-e8d14',
   storageBucket: 'crwn-db-e8d14.appspot.com',
   messagingSenderId: '258546546505',
-  appId: '1:258546546505:web:8189f58cc6694a0ef6cc98'
+  appId: '1:258546546505:web:8189f58cc6694a0ef6cc98',
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -27,13 +27,47 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
-        ...additionalData
+        ...additionalData,
       });
     } catch (error) {
       console.log('Error creating user', error.messsage);
     }
   }
   return userRef;
+};
+
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log(collectionRef);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+
+  return await batch.commit();
+};
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollections = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+    };
+  });
+
+  return transformedCollections.reduce((acc, collection) => {
+    acc[collection.title.toLowerCase()] = collection;
+    return acc;
+  }, {});
 };
 
 firebase.initializeApp(config);
