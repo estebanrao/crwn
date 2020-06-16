@@ -13,7 +13,7 @@ export const CartDropDownContainer = styled.div`
   right: 40px;
   z-index: 5;
 
-  button {
+  a {
     margin-top: auto;
   }
 `;
