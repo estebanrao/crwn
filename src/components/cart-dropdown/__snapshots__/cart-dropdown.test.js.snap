@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartDropdown should render CardDropdown component correctly with cart items passed in props 1`] = `
+"<CartDropDownContainer>
+  <CartItemsContainer>
+    <Memo(CartItem) item={{...}} />
+    <Memo(CartItem) item={{...}} />
+  </CartItemsContainer>
+  <CustomButton as={{...}} to=\\"/checkout\\" onClick={[Function: onClick]}>
+    GO TO CHECKOUT
+  </CustomButton>
+</CartDropDownContainer>"
+`;
+
+exports[`CartDropdown should render CardDropdown component correctly with empty message 1`] = `
+"<CartDropDownContainer>
+  <CartItemsContainer>
+    <EmptyMessage>
+      Your cart is empty
+    </EmptyMessage>
+  </CartItemsContainer>
+  <CustomButton as={{...}} to=\\"/checkout\\" onClick={[Function: onClick]}>
+    GO TO CHECKOUT
+  </CustomButton>
+</CartDropDownContainer>"
+`;

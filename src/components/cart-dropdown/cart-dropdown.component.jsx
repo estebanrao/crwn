@@ -14,7 +14,7 @@ import {
   EmptyMessage,
 } from './cart-dropdown.styles';
 
-const CartDrodown = ({ cartItems, dispatch }) => {
+export const CartDropdown = ({ cartItems, dispatch }) => {
   return (
     <CartDropDownContainer>
       <CartItemsContainer>
@@ -41,4 +41,4 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
-export default connect(mapStateToProps)(CartDrodown);
+export default connect(mapStateToProps)(CartDropdown);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdon from '../cart-dropdown/cart-dropdown.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { signOutStart } from '../../redux/user/user.actions';
@@ -34,7 +34,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       )}
       <CartIcon />
     </OptionsContainer>
-    {hidden ? null : <CartDropdon />}
+    {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
 

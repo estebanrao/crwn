@@ -17,11 +17,13 @@ export const CartDropDownContainer = styled.div`
     margin-top: auto;
   }
 `;
+CartDropDownContainer.displayName = 'CartDropDownContainer';
 
 export const EmptyMessage = styled.span`
   font-size: 18px;
   margin: 50px auto;
 `;
+EmptyMessage.displayName = 'EmptyMessage';
 
 export const CartItemsContainer = styled.div`
   height: 240px;
@@ -29,3 +31,4 @@ export const CartItemsContainer = styled.div`
   flex-direction: column;
   overflow: scroll;
 `;
+CartItemsContainer.displayName = 'CartItemsContainer';
